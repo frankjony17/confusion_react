@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { Navbar, NavbarBrand } from 'reactstrap'
+import Menu from './components/MenuComponent';
+import Example from './components/Example';
 import './App.css';
+import { DISHED } from './shared/dishes'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      dishes: DISHED
+    }  
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">Ristorante con Fusion</NavbarBrand>
+          </div>
+        </Navbar>
+        <Example />
+        <Menu dishes={ this.state.dishes }/>
       </div>
     );
   }
