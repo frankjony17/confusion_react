@@ -4,13 +4,13 @@ import { Navbar, NavbarBrand } from 'reactstrap'
 import Menu from './components/MenuComponent';
 import Example from './components/Example';
 import './App.css';
-import { DISHED } from './shared/dishes'
+import { DISHES } from './shared/dishes'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      dishes: DISHED
+      dishes: DISHES
     }  
   }
 
